@@ -1,5 +1,5 @@
 name:                color
-version:             0.1.0
+version:             0.0.1.0
 synopsis:            Convert colors between color spaces
 homepage:            https://github.com/endash/color
 license:             MIT
@@ -19,8 +19,8 @@ description:
   @hscolor@ models colors and color spaces, and converts between them.
 
 extra-source-files:
-    LICENSE
-    README.md
+  LICENSE
+  README.md
 
 source-repository head
   type:     git
@@ -46,8 +46,8 @@ library
   ghc-options: -Wall -fno-warn-orphans
 
   build-depends:
-                base,
-                matrix
+    base         >= 4.12.0 && < 4.13,
+    matrix       >= 0.3.6 && < 0.4
 
 test-suite tests
   type:           exitcode-stdio-1.0
@@ -55,28 +55,28 @@ test-suite tests
   main-is:        Test.hs
   default-language: Haskell2010
   other-modules:
-                Unit.RGB
-                Unit.LAB
-                Unit.LUV
-                Properties.RGB
-                Properties.LAB
-                Properties.LUV
-                Properties.LChroma
-                Helpers.Utils
-                Helpers.RGBColors
-                Helpers.LABColors
-                Helpers.LUVColors
-                Helpers.XYZColors
+    Unit.RGB
+    Unit.LAB
+    Unit.LUV
+    Properties.RGB
+    Properties.LAB
+    Properties.LUV
+    Properties.LChroma
+    Helpers.Utils
+    Helpers.RGBColors
+    Helpers.LABColors
+    Helpers.LUVColors
+    Helpers.XYZColors
 
 
   ghc-options:
     -Wall -threaded -rtsopts
 
   build-depends:
-                color,
-                base,
-                HUnit,
-                QuickCheck,
-                test-framework,
-                test-framework-quickcheck2,
-                test-framework-hunit
+    base,
+    color,
+    HUnit                      >= 1.6.0 && < 1.7,
+    QuickCheck                 >= 2.13.1 && < 2.14,
+    test-framework             >= 0.8.2 && < 0.9,
+    test-framework-hunit       >= 0.3.0 && < 0.4,
+    test-framework-quickcheck2 >= 0.3.0 && < 0.4
